@@ -43,4 +43,13 @@ router.post(
 	})
 );
 
+router.get(
+	'/logout',
+	catchAsync(async (req, res) => {
+		req.logout();
+		req.flash('success', 'GoodBye!');
+		res.redirect('/campgrounds');
+	})
+);
+
 module.exports = router;
