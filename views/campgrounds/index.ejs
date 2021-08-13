@@ -6,11 +6,13 @@
     <% for(let campground of campgrounds) {%>
         <div class="cards" mb-3>
             <div class="row">
-                <% if(campground.images[0]) {%> 
-                    <div class="col-md-4">
-                        <img class="img-fluid" alt="" src="<%= campground.images[0].url %> ">
-                    </div>
-                <% } %> 
+                <div class="col-md-4">
+                <% if(campground.images.length) {%> 
+                    <img class="img-fluid" alt="" src="<%= campground.images[0].url %> ">   
+                <% } else {%>
+                    <img class="img-fluid" alt="" src="https://res.cloudinary.com/davodacdr/image/upload/v1628270383/BeachCamp/bcqicfau6wjii0hlurfr.jpg"> 
+                <% } %>  
+                </div>
                 <div class="col-md-8">
                     <div class="card-body">
                         <h5 class="card-title"><%= campground.title %> </h5>
