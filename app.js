@@ -22,7 +22,11 @@ const userRoutes = require('./routes/users');
 const campgroundRoutes = require('./routes/campgrounds');
 const reviewRoutes = require('./routes/reviews');
 
-mongoose.connect('mongodb://localhost:27017/beach-camp', {
+const MongoDBStore = require('connect-mongo');
+
+const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/beach-camp';
+
+mongoose.connect(dbUrl, {
 	useNewUrlParser: true,
 	useCreateIndex: true,
 	useUnifiedTopology: true,
@@ -88,16 +92,22 @@ app.use(
 	})
 );
 
+const secret = process.env.SECRET || 'dummy';
+
 const sessionConfig = {
-	secret: 'dummy',
+	secret,
 	resave: false,
 	saveUninitialized: true,
 	cookie: {
 		httpOnly: true,
 		expires: Date.now() + 1000 * 60 * 60 * 24 * 7,
 		maxAge: 1000 * 60 * 60 * 24 * 7
-	}
+	},
+	store: MongoDBStore.create({
+		mongoUrl: dbUrl
+	})
 };
+
 app.use(session(sessionConfig));
 app.use(flash());
 
