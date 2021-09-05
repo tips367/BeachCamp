@@ -53,8 +53,9 @@ To see the app in action, go to [http://beachcamp.herokuapp.com/](http://beachca
 ## Built with
 
 ### Front-end
-* HTML5
-* CSS3
+
+* [HTML5](https://developer.mozilla.org/en-US/docs/Glossary/HTML5)
+* [CSS3](https://developer.mozilla.org/en-US/docs/Web/CSS)
 * [ejs](http://ejs.co/)
 * [Google Maps APIs](https://developers.google.com/maps/)
 * [Bootstrap](https://getbootstrap.com/docs/3.3/)
