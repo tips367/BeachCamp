@@ -80,3 +80,11 @@ To see the app in action, go to [http://beachcamp.herokuapp.com/](http://beachca
 * [Cloudinary](https://cloudinary.com/)
 * [Heroku](https://www.heroku.com/)
 * [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+
+## Screens
+
+![alt text](https://github.com/tips367/BeachCamp/blob/master/screens/home.png)
+
+
+![alt text](https://github.com/tips367/BeachCamp/blob/master/screens/camp.png)
+
